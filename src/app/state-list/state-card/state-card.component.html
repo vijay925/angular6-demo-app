@@ -1,0 +1,47 @@
+<div class="card mt-4">
+    <div class="card-body text-center">
+        <!-- State image and the overlay div -->
+        <div class="row overlayContainer">
+            <img class="card-img-top img-thumbnail mx-auto cardImage" [src]="stateObject.state_flag_url" alt="stateObject.state">
+            <div class="bg-white overlay">
+                <h1 class="overlayText">{{stateObject?.code}}</h1>
+            </div>
+        </div>
+
+        <!-- State name and nickname -->
+        <h1><a class="text-dark" [ngClass]="{'disabledLink': stateObject.website === null}" [attr.href]="stateObject.website">{{stateObject?.state}}</a></h1>
+        <h6 class=" text-muted">{{stateObject?.nickname}}</h6>
+        <hr>
+        
+        <!-- State details -->
+        <div class="text-left">
+            <div class="row">
+                <div class="col-md-6 col-lg-6 font-weight-bold">Admission Date:</div>
+                <div class="col-md-6 col-lg-6 font-weight-light">{{stateObject?.admission_date}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 font-weight-bold">Admission Number:</div>
+                <div class="col-md-6 col-lg-6 font-weight-light">{{stateObject?.admission_number}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 font-weight-bold">Capital City</div>
+                <div class="col-md-6 col-lg-6 font-weight-light"><a class="text-dark" [ngClass]="{'disabledLink': stateObject.capital_city === null}"
+                        [attr.href]="stateObject.capital_city">{{stateObject?.capital_city}}</a></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 font-weight-bold">Population</div>
+                <div class="col-md-6 col-lg-6 font-weight-light">{{stateObject?.population}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 font-weight-bold">Population Rank</div>
+                <div class="col-md-6 col-lg-6 font-weight-light">{{stateObject?.population_rank}}</div>
+            </div>
+        </div>
+        <hr>
+        <!-- Social media links -->
+        <div class="socialLinks">
+            <a [ngClass]="stateObject.facebook_url ? 'enabledLink' : 'disabledLink'" [attr.href]="stateObject.facebook_url" class="fa fa-facebook fa-2x"></a>
+            <a [ngClass]="stateObject.twitter_url ? 'enabledLink' : 'disabledLink'" [attr.href]="stateObject.twitter_url" class="fa fa-twitter fa-2x"></a>
+        </div>
+    </div>
+</div>
