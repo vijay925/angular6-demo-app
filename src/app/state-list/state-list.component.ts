@@ -56,8 +56,10 @@ export class StateListComponent implements OnInit {
   }
 
   /* Sort and search functionality */
+
+  // Returns states that have searchString in the beginning of their name (at index = 0)
   filterStates(searchString: string) {
-    return this.statesList.filter(element => element.state.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
+    return this.statesList.filter(element => element.state.toLowerCase().indexOf(searchString.toLowerCase()) === 0);
   }
 
   sortButton() {

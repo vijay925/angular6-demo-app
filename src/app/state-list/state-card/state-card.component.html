@@ -25,8 +25,8 @@
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-6 font-weight-bold">Capital City</div>
-                <div class="col-md-6 col-lg-6 font-weight-light"><a class="text-dark" [ngClass]="{'disabledLink': stateObject.capital_city === null}"
-                        [attr.href]="stateObject.capital_city">{{stateObject?.capital_city}}</a></div>
+                <div class="col-md-6 col-lg-6 font-weight-light"><a class="text-dark" [ngClass]="stateObject.capital_url ? 'enabledLink' : 'disabledLink'"
+                        [attr.href]="stateObject.capital_url">{{stateObject?.capital_city}}</a></div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-lg-6 font-weight-bold">Population</div>

@@ -1,10 +1,10 @@
 # Demo Angular 6 Application
 #### Features
-1) Loading sample data from local `states.json` file using HttpClient
-2) Displaying data in a [Twitter Bootstrap] Card deck
+1) Loading sample data from local `states.json` file using HttpClient module
+2) Displaying data in a [Bootstrap] Card deck
 3) Sort by Population
 4) Search by State name
-5) Pagination using ngxPagination module
+5) Pagination using [ngx-pagination] module
 
 ## Get started
 
@@ -30,4 +30,5 @@ npm start
 https://localhost:portNumber/
 ```
 
-[Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+[Bootstrap]: <https://ng-bootstrap.github.io/#/home/>
+[ngx-pagination]: <https://www.npmjs.com/package/ngx-pagination>
