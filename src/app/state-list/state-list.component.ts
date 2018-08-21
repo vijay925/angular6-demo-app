@@ -27,6 +27,7 @@ export class StateListComponent implements OnInit {
   set searchTerm(value: string) {
     this._searchTerm = value;
     this.filteredStates = this.filterStates(this._searchTerm);
+    this.filteredStates = this.sortByPopulation(this._sortDirection);
   }
 
   get sortDirection(): boolean {
@@ -58,7 +59,7 @@ export class StateListComponent implements OnInit {
   /* Sort and search functionality */
 
   // Returns states that have searchString in the beginning of their name (at index = 0)
-  filterStates(searchString: string) {
+  filterStates(searchString: string): State[] {
     return this.statesList.filter(element => element.state.toLowerCase().indexOf(searchString.toLowerCase()) === 0);
   }
 
@@ -70,11 +71,11 @@ export class StateListComponent implements OnInit {
     }
   }
 
-  sortByPopulation(direction: boolean) {
+  sortByPopulation(direction: boolean): State[] {
     if (direction === StateListComponent.ASCENDING) {
-      this.filteredStates = this.filteredStates.sort((a, b) => this.sortComparator(b, a));
+      return this.filteredStates.sort((a, b) => this.sortComparator(b, a));
     } else {
-      this.filteredStates = this.filteredStates.sort((a, b) => this.sortComparator(a, b));
+      return this.filteredStates.sort((a, b) => this.sortComparator(a, b));
     }
   }
 
