@@ -16,9 +16,12 @@ export class StateListComponent implements OnInit {
   private static ASCENDING = true;
   private static DESCENDING = false;
   private statesList: State[];
-  private filteredStates: State[];
+
   private _searchTerm: string;
   private _sortDirection: boolean;
+
+  filteredStates: State[];
+  page: any;
 
   get searchTerm(): string {
     return this._searchTerm;

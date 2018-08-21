@@ -11,12 +11,12 @@
         <app-state-card 
             [stateObject]="x" 
             class="col-lg-4 col-md-6 col-sm-12 col-xs-12" 
-            *ngFor="let x of filteredStates | paginate: {itemsPerPage: 10, currentPage: p}">
+            *ngFor="let x of filteredStates | paginate: {itemsPerPage: 10, currentPage: page}">
         </app-state-card>
     </div>
 
     <!-- Pagination for Card deck-->
     <div class="d-flex justify-content-center">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
     </div>
 </div>
